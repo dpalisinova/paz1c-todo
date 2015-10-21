@@ -34,4 +34,11 @@ public class MySqlUlohaDao implements UlohaDao {
         return jdbcTemplate.query(sql, mapper);
     }
 
+    @Override
+    public void odstranit(Uloha uloha) {
+        String sql = "DELETE FROM uloha WHERE ide = ?";
+        jdbcTemplate.update(sql, uloha.getId()); // update aj  na mazanie, uloha.getId = to je ten otaznicek
+    }
+    
+
 }
