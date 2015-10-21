@@ -36,7 +36,7 @@ public class MySqlUlohaDao implements UlohaDao {
 
     @Override
     public void odstranit(Uloha uloha) {
-        String sql = "DELETE FROM uloha WHERE ide = ?";
+        String sql = "DELETE FROM uloha WHERE id = ?";
         jdbcTemplate.update(sql, uloha.getId()); // update aj  na mazanie, uloha.getId = to je ten otaznicek
     }
     
