@@ -9,8 +9,8 @@ import javax.swing.ListCellRenderer;
 
 public class UlohaListCellRenderer extends DefaultListCellRenderer {
 
-    @Override
-    public Component getListCellRendererComponent(JList<?> list, Object uloha, int index, boolean isSelected, boolean cellHasFocus) {
+   
+    public Component getListCellRendererComponent(JList<?> list, Uloha uloha, int index, boolean isSelected, boolean cellHasFocus) {
         Component component = super.getListCellRendererComponent(list, uloha, index, isSelected, cellHasFocus);
         if (jeSplnena(uloha) && !isSelected) {
             component.setBackground(Color.green);
@@ -18,8 +18,8 @@ public class UlohaListCellRenderer extends DefaultListCellRenderer {
         return component;
     }
 
-    private boolean jeSplnena(Object uloha) {
-        return true;
+    private boolean jeSplnena(Uloha uloha) {
+        return uloha.isSplnena();
     }
 
 }
