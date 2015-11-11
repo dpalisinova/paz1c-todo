@@ -37,4 +37,9 @@ public class PamatovyUlohaDao implements UlohaDao {
        ulohy.remove(uloha);
     }
 
+    @Override
+    public void upravit(Uloha uloha) {
+ 
+    }
+
 }

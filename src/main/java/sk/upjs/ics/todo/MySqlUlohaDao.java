@@ -39,6 +39,16 @@ public class MySqlUlohaDao implements UlohaDao {
         String sql = "DELETE FROM uloha WHERE id = ?";
         jdbcTemplate.update(sql, uloha.getId()); // update aj  na mazanie, uloha.getId = to je ten otaznicek
     }
-    
+
+    @Override
+    public void upravit(Uloha uloha) {
+        String sql = "UPDATE `todo`.`uloha`\n"
+                + "SET\n"
+                + "`nazov` = ?,\n"
+                + "`date` = ?,\n"
+                + "`splnena` = ?,\n"
+                + "WHERE `id` = ?;";
+        jdbcTemplate.update(sql, uloha.getNazov(), uloha.getDate(), uloha.isSplnena(), uloha.getId());
+    }
 
 }
